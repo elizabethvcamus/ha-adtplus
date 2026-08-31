@@ -1,0 +1,68 @@
+police_emergency:
+  name: Send police emergency signal
+  description: >-
+    Sends a REAL monitored police emergency/panic signal through ADT+.
+    Use only for an actual emergency. The signal is not sent unless Confirm is true.
+  fields:
+    confirm:
+      name: Confirm
+      description: Must be enabled to send the real monitored emergency signal.
+      required: true
+      selector:
+        boolean:
+    partition_id:
+      name: Partition ID
+      description: Optional ADT partition ID. Leave blank for the first/only partition.
+      required: false
+      selector:
+        text:
+    config_entry_id:
+      name: ADT+ hub config entry ID
+      description: Only needed when more than one ADT+ hub is configured.
+      required: false
+      selector:
+        text:
+
+medical_emergency:
+  name: Send medical emergency signal
+  description: >-
+    Sends a REAL monitored medical emergency/panic signal through ADT+.
+    Use only for an actual emergency. The signal is not sent unless Confirm is true.
+  fields:
+    confirm:
+      name: Confirm
+      required: true
+      selector:
+        boolean:
+    partition_id:
+      name: Partition ID
+      required: false
+      selector:
+        text:
+    config_entry_id:
+      name: ADT+ hub config entry ID
+      required: false
+      selector:
+        text:
+
+fire_emergency:
+  name: Send fire emergency signal
+  description: >-
+    Sends a REAL monitored fire emergency/panic signal through ADT+.
+    Use only for an actual emergency. The signal is not sent unless Confirm is true.
+  fields:
+    confirm:
+      name: Confirm
+      required: true
+      selector:
+        boolean:
+    partition_id:
+      name: Partition ID
+      required: false
+      selector:
+        text:
+    config_entry_id:
+      name: ADT+ hub config entry ID
+      required: false
+      selector:
+        text:

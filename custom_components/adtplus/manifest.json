@@ -1,0 +1,14 @@
+{
+  "domain": "adtplus",
+  "name": "ADT+",
+  "version": "0.3.4",
+  "config_flow": true,
+  "integration_type": "hub",
+  "iot_class": "cloud_push",
+  "requirements": [],
+  "codeowners": [
+    "@elizabethvcamus"
+  ],
+  "documentation": "https://github.com/elizabethvcamus/ha-adtplus",
+  "issue_tracker": "https://github.com/elizabethvcamus/ha-adtplus/issues"
+}
