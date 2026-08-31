@@ -125,6 +125,15 @@ def sensor_definitions(data: dict[str, Any]) -> list[SensorDefinition]:
 
         for unit_index, service_index, svc in raw_defs:
             sensor_type = str(svc.get("sensorType") or "security")
+
+            # Premium ADT contact sensors can advertise openCloseShock as a
+            # configuration capability, but SRV1 does not provide a persistent
+            # Boolean shock state for it. Creating a binary sensor therefore
+            # leaves a permanent "Shock: Unknown" entity. Real shock history
+            # is exposed separately through ShockStatusService as Last Shock.
+            if sensor_type == "openCloseShock":
+                continue
+
             zone_id = str(svc.get("zoneId") if svc.get("zoneId") is not None else unit_index)
             placement = svc.get("placement")
             suffix = _friendly_sensor_type(sensor_type)

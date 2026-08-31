@@ -1,7 +1,7 @@
 {
   "domain": "adtplus",
   "name": "ADT+",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "config_flow": true,
   "integration_type": "hub",
   "iot_class": "cloud_push",
