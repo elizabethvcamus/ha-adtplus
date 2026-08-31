@@ -100,8 +100,10 @@ class ADTPlusCoordinator(DataUpdateCoordinator[dict[str, Any]]):
             except ADTPlusConnectionError as err:
                 raise UpdateFailed(str(err)) from err
 
-            self._runner = self.hass.async_create_task(
+            self._runner = self.entry.async_create_background_task(
+                self.hass,
                 self._async_run(),
+                "ADT+ push coordinator",
                 eager_start=True,
             )
 
