@@ -9,7 +9,7 @@ ADT+ cloud/SRV1 interfaces.
 
 ## Current status
 
-**Beta — v0.3.4**
+**Beta — v0.3.5**
 
 The integration uses undocumented ADT+ interfaces. ADT may change those
 interfaces without notice, which can temporarily break the integration.
@@ -26,10 +26,22 @@ interfaces without notice, which can temporarily break the integration.
 - Battery information when ADT supplies it
 - Signal strength when ADT supplies a real RSSI value
 - Sensor Tamper and Device Health diagnostics
+- Last Shock timestamp for premium contact sensors when ADT supplies it
 - ADT-managed Z-Wave Yale lock state
 - Lock / Unlock control through ADT
 - Lock Jam diagnostic when a lock command is not confirmed
 - Police, Medical, and Fire emergency actions
+
+
+## Premium contact sensor shock data
+
+Some premium ADT door/window sensors advertise an `openCloseShock` capability.
+ADT does not expose that capability as a persistent on/off shock state, so
+treating it as a binary sensor results in an unusable `Shock: Unknown` entity.
+
+As of v0.3.5, the integration no longer creates that false Boolean entity.
+Actual shock history is represented by the **Last Shock** timestamp when ADT
+provides `ShockStatusService.lastAlertTimestamp`.
 
 ## Critical emergency-action warning
 

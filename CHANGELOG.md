@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.5
+- Changed the always-running ADT+ WebSocket listener to a Home Assistant
+  config-entry background task, preventing Home Assistant from waiting on the
+  persistent connection during startup and avoiding the bootstrap timeout warning.
+- Removed the redundant `Shock: Unknown` entity from premium ADT door/window sensors.
+- `openCloseShock` is no longer treated as a persistent Boolean sensor.
+- Preserved the real `Last Shock` timestamp from ADT shock status data.
+- No changes to alarm controls, Yale lock controls, Lock Jam, or emergency actions.
+
 ## 0.3.4
 - Cleaned diagnostic naming and removed redundant/unknown diagnostics.
 - `Battery Level` renamed to `Battery`.

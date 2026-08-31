@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local ADT authentication / capture artifacts
+adtplus_tokens.json
+adtplus_locations.json
+adtplus_push_trace.jsonl
+*.token
+.env
+.env.*

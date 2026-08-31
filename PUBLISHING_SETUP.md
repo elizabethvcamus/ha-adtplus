@@ -1,6 +1,6 @@
 # Before publishing
 
-Replace `YOUR_GITHUB_USERNAME` in:
+Replace `elizabethvcamus` in:
 
 - `custom_components/adtplus/manifest.json`
 
@@ -17,6 +17,6 @@ Recommended topics:
 `home-assistant`, `hacs`, `adt`, `adtplus`, `smart-home`, `security-system`
 
 Create a public GitHub repository, upload the contents of this folder to the
-repository root, then create a GitHub release/tag such as `v0.3.4`.
+repository root, then create a GitHub release/tag such as `v0.3.5`.
 
 Do not upload local token files, account/location files, or ADT payload captures.
